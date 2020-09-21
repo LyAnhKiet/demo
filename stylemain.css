@@ -1,0 +1,193 @@
+h1{
+    font-family: Times New Roman;
+    color: darkblue;
+    text-align: center;
+}
+h2{
+    font-family: Times New Roman;
+    color: blue;
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+   /* list-style: none;
+    text-decoration: none;*/
+}
+body{
+    
+    background-image: url(8.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+/*Tạo thanh menun ngang để chứa các thông tin*/
+.menu-bar{
+    background: rgb(9, 66, 153);
+    text-align: center;
+
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menu-bar ul li{
+    width: 120px;
+    margin: 15x;
+    padding: 15px;
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.active, .menu-bar ul li:hover{
+    background: #08a2df;
+    border-radius: 30px;
+}
+.menu-bar .fa{
+    margin-right: 8px;
+
+}
+.sub-menu-1{
+    display: none;
+
+}
+.menu-bar ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: rgb(9, 66, 153);
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
+    border-bottom: none;
+}
+
+/*Hiệu ứng đổi màu khi rê chuột vào menu-bar dạng danh sách (li)*/
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+    color: #0fe43d;
+}
+
+/*icon mũi tên để hiển thị danh sách con tiếp theo >*/
+.fa-angle-right{
+    float: right;
+
+}
+/*Thiết lập menu sub 2*/
+.sub-menu-2{
+    display: none;
+}
+
+.hover-me:hover .sub-menu-2{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 150px;
+    background: rgb(63, 136, 247);
+}
+
+
+.sidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+    transition: all .5s ease;
+}
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);   
+    border-bottom: 1px solid black; 
+}
+ul li:hover a{
+    padding-left: 10px;
+}
+.sidebar ul a i{
+    margin-right: 10px;
+}
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+label #btn{
+    left: 0px;
+    top: 130px;
+    font-size: 35px;
+    color: red;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 130px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 195px;
+  
+}
+#check:checked ~ section{
+    margin-left: 250px;
+}
+
+section{
+    background: url(backk.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s;
+}
